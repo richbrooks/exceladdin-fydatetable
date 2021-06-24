@@ -1,1 +1,104 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Fiscal Year Calendar based on-->
+    <!-- Create Time Dimension by Stefan Johansson, see more: http://sj.la/timedimension -->
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+
+    <title>Create FY Date Table</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="../Content/Office.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/kendo.common.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/kendo.metro.css" />
+    <link rel="stylesheet" type="text/css" href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/themes/base/jquery-ui.css" />
+
+    <!-- JQuery, JQuery UI and Office.js from Microsoft CDN-->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/jquery-ui.min.js"></script>
+    <script src="https://appsforoffice.microsoft.com/lib/1.0/hosted/office.js"></script>
+
+    <!-- Kendo js from Kendo/Telerik CDN using https -->
+    <script src="https://da7xgjtj801h2.cloudfront.net/2012.3.1114/js/kendo.core.min.js"></script>
+    <script src="https://da7xgjtj801h2.cloudfront.net/2012.3.1114/js/kendo.fx.min.js"></script>
+    <script src="https://da7xgjtj801h2.cloudfront.net/2012.3.1114/js/kendo.calendar.min.js"></script>
+    <script src="https://da7xgjtj801h2.cloudfront.net/2012.3.1114/js/kendo.popup.min.js"></script>
+    <script src="https://da7xgjtj801h2.cloudfront.net/2012.3.1114/js/kendo.datepicker.min.js"></script>
+    <script src="https://da7xgjtj801h2.cloudfront.net/2012.3.1114/js/kendo.data.min.js"></script>
+    <script src="https://da7xgjtj801h2.cloudfront.net/2012.3.1114/js/kendo.list.min.js"></script>
+    <script src="https://da7xgjtj801h2.cloudfront.net/2012.3.1114/js/kendo.dropdownlist.min.js"></script>
+    <script src="https://da7xgjtj801h2.cloudfront.net/2012.3.1114/js/kendo.validator.min.js"></script>
+    <script src="https://da7xgjtj801h2.cloudfront.net/2012.3.1114/js/kendo.numerictextbox.min.js"></script>
+
+    <!-- App specific styles -->
+    <link rel="stylesheet" type="text/css" href="../Content/App.css" />
+
+    <!-- App specific js -->
+    <script src="../Scripts/App.js"></script>
+
+</head>
+<body>
+    <div id="wrap">
+        <div id="main">
+
+            <div id="header" style="height: 50px; margin-bottom: 15px; background-color: none">
+                <img style="float: left; margin-top: 10px; margin-left: 10px;" src="../images/AppIcon.png" alt="Create Time Dimension App Logo" />
+                <h1 style="margin-left: 60px">Create Time Dimension</h1>
+                <div style="margin-left: 60px"><a href="http://sj.la/stefanj">by Stefan Johansson</a></div>
+            </div>
+            <hr />
+
+            <h2>Choose Values</h2>
+
+            <div style="font-weight: bold">Start and End Date</div>
+            <div>
+                <label for="startDatePicker">Start Date:</label>
+                <span style="float: right; width: 150px">
+                    <input id="startDatePicker" value="1/1/2011" required type="date" />
+                </span>
+            </div>
+
+            <div>
+                <label for="endDatePicker">End Date:</label>
+                <span style="float: right; width: 150px;">
+                    <input id="endDatePicker" value="12/31/2012" required type="date" />
+                </span>
+            </div>
+
+            <div style="font-weight: bold">Options</div>
+
+            <div>
+                <label for="locale">Language:</label>
+                <select id="locale" style="float: right; width: 150px;">
+                    <option>English</option>
+                </select>
+            </div>
+
+
+  
+
+            <div>
+                <label for="idstartsfrom">Id column starts from:</label>
+                <span style="float: right; width: 150px;">
+                    <input id="idstartsfrom" type="number" value="1" />
+                    <!-- <input id="Number1" name="Id starts from" type="number" class="k-textbox" value="1" required  /> -->
+                </span>
+            </div>
+
+
+            <br />
+            <button class="k-button" style="width: 100%" id="setDataBtn">Insert data beginning in current cell</button>
+        </div>
+
+    </div>
+
+    <div id="footer">
+        <div style="text-align: center;"><a href="http://sj.la/timedimension">Metatron FY Date Table</a></div>
+    </div>
+
+</body>
+</html>
